@@ -39,3 +39,31 @@ for (let i = 0; i < 21; i++) {
     console.log ('False')
   }
 }
+
+
+
+// 3 task 
+
+const myRecipe = {
+} 
+
+myRecipe.mealName = 'Omelette';
+myRecipe.serves = 2;
+myRecipe.ingredients = ['4 eggs', '2 strips of bacon', '1 tsp salt/pepper'];
+
+let item = Object.keys(myRecipe).length;
+console.log (item);
+
+while (item < 4) {
+  console.log ('Meal name: ' + myRecipe.mealName);
+  console.log ('Serves: ' + myRecipe.serves)
+  console.log ('Ingredients: ' + myRecipe.ingredients.join (', '))
+  item++;
+}
+
+// 4 task
+
+
+
+
+
