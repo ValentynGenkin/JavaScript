@@ -104,3 +104,45 @@ for (i = 0; i < myBooks.length; i++){
 
 // 5 task
 
+/**
+ * You're at a party and you feel thirsty! However, you've got 5 friends who are also in need of a drink. Let's go get them a drink.
+ *
+ * Declare a variable that holds an empty array, called drinkTray.
+ * Create a loop that runs 5 times. On each iteration, push a drink into the drinkTray variable. The drinkTray can only hold at most two instances of the same drink type, for example it can only hold 2 colas, 2 lemonades, 2 waters.
+ * 
+ * Log to the console: "Hey guys, I brought a [INSERT VALUES FROM ARRAY]!" (For example: "Hey guys, I brought a cola, cola, lemonade, lemonade, water!")
+ */
+
+// There are 3 different types of drinks:
+
+const drinkTypes = ['cola', 'lemonade', 'water'];
+
+const drinkTray = [];
+
+function randomDrink () {
+  a = Math.floor(Math.random()*3);
+  return drinkTypes[a];
+}
+
+const drink = randomDrink();
+const clone = Object.assign([], drinkTypes);
+
+  for (i = 0; drinkTray.length < 2 ; i++){
+    drinkTray.push(randomDrink()); 
+  if (drinkTray[0] !== drink) {
+    drinkTray.push(drink)
+  } else if (drinkTray[0] === drink){
+    drinkTypes.splice(drinkTypes.indexOf(drink), 1)
+    drinkTray.push(drinkTypes[Math.floor(Math.random()*drinkTypes.length)])
+  }for (i = 0; i < clone.length; i++){
+    drinkTray.push(clone[i])
+  }
+  }
+
+  function shuffle() {
+    return Math.random () - 0.5;
+  }
+
+console.log(`Hey guys, I brought a ${drinkTray.sort(shuffle).join(', ')}!`)
+
+
