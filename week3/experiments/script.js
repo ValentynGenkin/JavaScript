@@ -3,27 +3,9 @@
 function runExperiment(sampleSize) {
   const valueCounts = [0, 0, 0, 0, 0, 0];
   
-for (let i=0; i < sampleSize; i++){
+for (let i=0; i < 20; i++){
   const cubeSide =  Math.floor(Math.random() * 6);
-    if (cubeSide === 0){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-    else if (cubeSide === 1){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-    else if (cubeSide === 2){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-    else if (cubeSide === 3){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-    else if (cubeSide === 4){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-    else if (cubeSide === 5){
-      valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
-    }
-
+  valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
 }
   
   // TODO
@@ -36,7 +18,9 @@ for (let i=0; i < sampleSize; i++){
   //    for keeping a count how many times the value 1 is thrown, the second
   //    element for value 2, etc.
 
-  const results = [];
+  const [];
+ 
+  
 
 
   // TODO
