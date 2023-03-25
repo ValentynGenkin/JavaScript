@@ -1,9 +1,10 @@
 "use strict";
 
+
 function runExperiment(sampleSize) {
   const valueCounts = [0, 0, 0, 0, 0, 0];
   
-for (let i=0; i < 20; i++){
+for (let i=0; i < sampleSize; i++){
   const cubeSide =  Math.floor(Math.random() * 6);
   valueCounts.splice(cubeSide, 1, valueCounts[cubeSide]+1)
 }
@@ -18,10 +19,11 @@ for (let i=0; i < 20; i++){
   //    for keeping a count how many times the value 1 is thrown, the second
   //    element for value 2, etc.
 
-  const [];
+  const results = [];
  
-  
-
+  for (const percentageOfThrown of valueCounts){
+    results.push(((percentageOfThrown / valueCounts)*100).toFixed(2));
+  }
 
   // TODO
   // Write a for..of loop for the `valueCounts` array created in the previous
@@ -34,11 +36,20 @@ for (let i=0; i < 20; i++){
   // 3. Then push that string onto the `results` array.
 
   return results;
-
+  
 }
 
 function main() {
   const sampleSizes = [100, 1000, 1000000];
+
+  for (let result of sampleSizes){
+
+    const finaleResult = runExperiment(result)
+    console.log(finaleResult)
+    console.log(result)
+
+  }
+
 
   // TODO
   // Write a for..of loop that calls the `runExperiment()` function for each
