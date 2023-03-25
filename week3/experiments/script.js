@@ -22,9 +22,9 @@ for (let i=0; i < sampleSize; i++){
   const results = [];
  
   for (const percentageOfThrown of valueCounts){
-    results.push(((percentageOfThrown / valueCounts)*100).toFixed(2));
+    results.push(((percentageOfThrown / sampleSize)*100).toFixed(2));
   }
-
+  
   // TODO
   // Write a for..of loop for the `valueCounts` array created in the previous
   // loop. In each loop iteration:
@@ -35,21 +35,16 @@ for (let i=0; i < sampleSize; i++){
   //    two decimals, e.g. '14.60'.
   // 3. Then push that string onto the `results` array.
 
-  return results;
-  
+  return results; 
 }
 
 function main() {
   const sampleSizes = [100, 1000, 1000000];
 
-  for (let result of sampleSizes){
-
-    const finaleResult = runExperiment(result)
-    console.log(finaleResult)
-    console.log(result)
-
+  for (let iterates of sampleSizes){
+    const finaleResult = runExperiment(iterates)
+    console.log(finaleResult, iterates)
   }
-
 
   // TODO
   // Write a for..of loop that calls the `runExperiment()` function for each
