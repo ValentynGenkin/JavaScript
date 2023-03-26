@@ -15,13 +15,21 @@ function getCurrentState(trafficLight) {
 
 function getNextStateIndex(trafficLight) {
 
-  if (getCurrentState(trafficLight) === 'green'){
-    return 1;
-  } else if (getCurrentState(trafficLight) === 'orange'){
-    return 2;
-  } else if (getCurrentState(trafficLight) === 'red'){
+
+  if (trafficLight.stateIndex === trafficLight.possibleStates.length -1){
     return 0;
-  }
+  }  
+  return trafficLight.stateIndex +1;
+
+
+
+  // if (getCurrentState(trafficLight) === 'green'){
+  //   return 1;
+  // } else if (getCurrentState(trafficLight) === 'orange'){
+  //   return 2;
+  // } else if (getCurrentState(trafficLight) === 'red'){
+  //   return 0;
+  // }
 
   // TODO
   // Return the index of the next state of the `trafficLight` such that:
