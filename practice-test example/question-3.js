@@ -32,9 +32,22 @@ const DELIVERY_STATUS = {
  * The other situations should be obvious.
  */
 const getDeliveryStatus = (delivery) => {
-
   
+if (delivery.isDelivered === false && delivery.isReturned === false){
+  return DELIVERY_STATUS.PENDING
+} 
+  else if (delivery.isDelivered === true && delivery.isReturned === false){
+  return DELIVERY_STATUS.DELIVERED
+} 
+  else if (delivery.isDelivered === false && delivery.isReturned === true){
+  return DELIVERY_STATUS.RETURNED
+} 
+  else if (delivery.isDelivered === true && delivery.isReturned === true){
+  return DELIVERY_STATUS.RETURNED
+}
 };
+
+
 
 /**
  * TEST CODE. DO NOT EDIT

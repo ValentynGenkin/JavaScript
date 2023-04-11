@@ -44,7 +44,47 @@ const DELIVERY_STATUS = {
  * HINT: you will need to use the Date object and do Date manipulation, have a look at the MDN documentation of that object for functions you can use
  * HINT: the Date object is badly named as it also includes the current time so you will need to find a way to ignore it (see how naming matters!)
  */
-const getDashboardInformation = (deliveries, today, tomorrow) => {};
+const getDeliveryStatus = (delivery) => {
+  if (delivery.isReturned) {
+    return DELIVERY_STATUS.RETURNED;
+  } else if (delivery.isDelivered) {
+    return DELIVERY_STATUS.DELIVERED;
+  } else {
+    return DELIVERY_STATUS.PENDING;
+  }
+};
+
+const isOnSameDay = (date1, date2) => {
+  return (
+    date1.getDate() === date2.getDate() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getFullYear() === date2.getFullYear()
+  );
+};
+const getDashboardInformation = (deliveries, today, tomorrow) => {
+  const pendingDeliveries = deliveries.filter(
+    (delivery) => getDeliveryStatus(delivery) === DELIVERY_STATUS.PENDING
+  );
+
+  const todaysDeliveries = [];
+  const tomorrowsDeliveries = [];
+
+  pendingDeliveries.forEach((delivery) => {
+    const day = delivery.plannedDeliveryDate;
+    console.log(day)
+    if (isOnSameDay(today, day)) {
+      todaysDeliveries.push(delivery);
+    } else if (isOnSameDay(tomorrow, day)) {
+      tomorrowsDeliveries.push(delivery);
+    }
+  });
+
+  return {
+    today: todaysDeliveries,
+    tomorrow: tomorrowsDeliveries,
+  };
+};
+
 
 /**
  * TEST CODE. DO NOT EDIT

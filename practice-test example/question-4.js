@@ -22,8 +22,23 @@
  * Per `driverId` property we get an array with all the deliveries that `driverId` is responsible for.
  * See the TEST CODE for an example of what the result should look like.
  */
-const getDeliveriesPerDriver = (deliveries) => {
 
+
+const getDeliveriesPerDriver = (deliveries) => {
+  const deliveriesPerDriver = {};
+
+  deliveries.forEach((delivery) => {
+    const driverId = delivery.driverId;
+    const alreadyIncludedDeliveries = deliveriesPerDriver[driverId];
+
+    if (alreadyIncludedDeliveries == null) {
+      deliveriesPerDriver[driverId] = [delivery];
+    } else {
+      deliveriesPerDriver[driverId].push(delivery);
+    }
+  });
+
+  return deliveriesPerDriver;
 };
 
 /**
