@@ -12,13 +12,8 @@
  * - `tag`: A string to be used when filtering. Only rentals that have this `tag` in their `tags` array should be in the resulting array.
  */
 const filterRentals = (rentals = [], nearLake, tag) => {
-  const lakePresence = nearLake;
-  const tagFilter = tag;
-  const result = rentals
-  .filter(tag => tag.tags.includes(tagFilter) === true)
-  .filter(lake => lake.nearLake === lakePresence);
-
-  return result;
+  return rentals
+  .filter(search => search.tags.includes(tag) === true && search.nearLake === nearLake)
 };
 
 /**

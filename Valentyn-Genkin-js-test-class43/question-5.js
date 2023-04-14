@@ -18,7 +18,8 @@
  * To determine if you can ice skate weeronline says that the temperature should not go above 0 (so 0 is fine) for 5 consecutive days. It is then possible to ice skate on the day after those 5 days
  */
 const possibleSkateDays = (data) => {
-  
+  const freezeDays = data.filter(day => day.highestTemperature <= 0)
+  console.log(freezeDays.filter(date => date.date ))
 };
 
 /**

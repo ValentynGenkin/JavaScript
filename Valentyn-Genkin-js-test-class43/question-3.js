@@ -45,7 +45,7 @@ const getVacancyMessage = (rental, bookings = []) => {
     return MESSAGE.ONLY1LEFT
   } else if (final >= 2 && final <= 3){
     return MESSAGE.ONLYXLEFT(final)
-  } else if (final > 3) {
+  } else {
     return MESSAGE.AVAILABLE
   }
 }
