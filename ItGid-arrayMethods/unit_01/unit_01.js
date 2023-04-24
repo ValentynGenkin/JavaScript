@@ -59,10 +59,9 @@ const f3 = () => {
 let a4 = [1, '1', 2, '2', '3'];
 
 const f4 = (arr, elem) => {
- elem = +document.querySelector('.i-4').value;
- document.querySelector('.out-4').textContent = arr.indexOf(elem);
- document.querySelector('.b-4').addEventListener('click', () => f4(a4, elem))
+  document.querySelector('.out-4').textContent = arr.indexOf(elem);
 }
+
 
 // TASK 05
 // По нажатию b-5 выполняется функция f5. Функция считывает значение из i-5-1 и индекс с которого начинается поиск в массиве с i-5-2 и с помощью indexOf и ищет данный элемент в массиве a5 c позиции указанной в i-5-2. Выводит в out-5 индекс если он есть в массиве, или -1 если нет.
@@ -81,6 +80,7 @@ const f5 = () => {
   document.querySelector('.out-5').textContent = a5.indexOf(element, index);
   document.querySelector('.b-5').addEventListener('click', f5);
 }
+
 
 // TASK 06
 // По нажатию b-6 выполняется функция f6. Функция считывает значение из i-6 и с помощью indexOf и ищет данный элемент в СТРОКЕ a6. Выводит в out-6 результат поиска.
@@ -105,17 +105,18 @@ let a7 = [21, 22, 23, 24, 25, 26, 27];
 
 const f7 = (arr, elem) => {
   for (let i=0; i < arr.length; i++){
-    if (arr[i] === elem){
-      return i 
+    if (arr[i] === elem) {
+      return i;
     }
   }
-  return -1
+  return -1;
 }
-
   document.querySelector('.b-7').addEventListener('click', () => {
     let num = +document.querySelector('.i-7').value;
-    document.querySelector('.out-7').textContent = f7(a7,num)
+    document.querySelector('.out-7').innerHTML = f7(a7,num)
   });
+
+  
 
 
 // TASK 08 * - сложная
@@ -135,9 +136,7 @@ const f8 = () => {
       res08.push(i);
     }
   }
-    // ваш код
-    document.querySelector('.out-8').innerHTML = res08;
-    document.querySelector('.b-8').addEventListener('click', f8);
+  document.querySelector('.out-8').innerHTML = res08;
 }
 
 // TASK 09
@@ -199,8 +198,8 @@ document.querySelector('.b-1').addEventListener('click', f1);
 document.querySelector('.b-2').addEventListener('click', f2);
 document.querySelector('.b-3').addEventListener('click', f3);
 document.querySelector('.b-4').addEventListener('click', ()=>{
-    f4(a4, '2'); // изучите какой индекс вывело. Разберитесь почему
-   // f4(a4, 2); // изучите какой индекс вывело. Разберитесь почему
+    // f4(a4, '2'); // изучите какой индекс вывело. Разберитесь почему
+   f4(a4, 2); // изучите какой индекс вывело. Разберитесь почему
 });
 document.querySelector('.b-5').addEventListener('click', f5);
 document.querySelector('.b-6').addEventListener('click', f6);
