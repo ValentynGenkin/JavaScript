@@ -71,7 +71,6 @@ return console.log(a5);
 let a6 = ['a', 'b'];
 
 const f6 = (arr, elem) => {
-  elem = document.querySelector('.i-6').value;
   arr[arr.length] = elem;
   return arr.length;
 }
