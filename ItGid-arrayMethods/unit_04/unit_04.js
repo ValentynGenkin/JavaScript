@@ -69,7 +69,6 @@ const f5 = () => {
 let a6 = ['a', 'b', 'c', 'd', 'e', 'f'];
 
 const f6 = (elem) => {
-  elem = document.querySelector('.i-6').value;
   const a6New = [elem];
   for (let i = 0; i < a6.length; i++) {
     a6New.push(a6[i])
