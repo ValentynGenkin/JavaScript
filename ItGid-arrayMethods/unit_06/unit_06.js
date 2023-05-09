@@ -32,7 +32,9 @@ let a3 = [2, 3, 4, 5, -6, 55, 1, 12, -3, 7, 4, 5, 2];
 let z3 = [];
 
 const f3 = () => {
-  z3 = a3.filter(item => item > 4);
+  z3 = a3
+      .filter(item => item > 4)
+      .map((item, index) => index)
   console.log(z3);
 }
 
